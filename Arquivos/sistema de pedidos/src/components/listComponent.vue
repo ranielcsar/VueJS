@@ -33,14 +33,10 @@
 
 <script>
 
-import pedidos from '../components/pedidosComponent.vue';
 import { EventBus } from '../event-bus.js';
 
    export default {
       name: 'lista',
-
-      components: { pedidos },
-
       data()
       {
          return {
