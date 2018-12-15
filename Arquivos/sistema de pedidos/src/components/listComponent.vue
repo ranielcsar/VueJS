@@ -34,6 +34,7 @@
 <script>
 
 import pedidos from '../components/pedidosComponent.vue';
+import { EventBus } from '../event-bus.js';
 
    export default {
       name: 'lista',
@@ -68,9 +69,7 @@ import pedidos from '../components/pedidosComponent.vue';
             var pizza = document.getElementById('opcaoPizza').value;
             var bebida = document.getElementById('opcaoBebida').value;
            
-            // pedidos.listaPedidos.push({pizza: pizza, bebida: bebida});
-
-            console.log(pizza, bebida);
+            EventBus.$emit('addPedido', {pizza: pizza, bebida: bebida});
          }
       }
    }
