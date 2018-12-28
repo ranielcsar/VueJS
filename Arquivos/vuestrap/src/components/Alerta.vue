@@ -1,7 +1,7 @@
 <template>
    <div>
       <b-alert show v-for="variante in variantes" :variant="variante.valor">
-         {{ variante.valor }} alert
+         Alerta {{ variante.nome }}.
       </b-alert>
    </div>
 </template>
@@ -15,14 +15,14 @@
          return {
             variantes:
             [
-               {valor: 'primary'},
-               {valor: 'secondary'},
-               {valor: 'success'},
-               {valor: 'danger'},
-               {valor: 'warning'},
-               {valor: 'info'},
-               {valor: 'light'}, 
-               {valor: 'dark'}
+               { nome: 'primário',   valor: 'primary'   },
+               { nome: 'secundário', valor: 'secondary' },
+               { nome: 'de sucesso', valor: 'success'   },
+               { nome: 'de erro',    valor: 'danger'    },
+               { nome: 'de aviso',   valor: 'warning'   },
+               { nome: 'padrão',     valor: 'info'      },
+               { nome: 'claro',      valor: 'light'     }, 
+               { nome: 'escuro',     valor: 'dark'      }
             ]            
          }
       }
