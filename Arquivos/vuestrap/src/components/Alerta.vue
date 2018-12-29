@@ -1,6 +1,6 @@
 <template>
    <div>
-      <b-alert show v-for="variante in variantes" :variant="variante.valor">
+      <b-alert show v-for="variante in variantes" :variant="variante.valor" class="teste">
          Alerta {{ variante.nome }}.
       </b-alert>
    </div>
