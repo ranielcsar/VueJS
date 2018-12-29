@@ -29,3 +29,15 @@
    }
 
 </script>
+
+<style>
+
+.teste {
+   transition: 300ms;
+}
+
+   .teste:hover {
+      transform: scale(1.01);
+   }
+
+</style>
