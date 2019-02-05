@@ -1,41 +1,28 @@
 <template>
-  <div id="principal">
-    <barraRegistro></barraRegistro>
-    <cabecalho></cabecalho>
-    <carrossel></carrossel>
-    <conteudo></conteudo>
+  <div id="app">
+    <barraNavegacao></barraNavegacao>
+    <router-view/>
   </div>
 </template>
 
 <script>
 
-import barraRegistro from '../src/components/barraRegistro.vue';
-import cabecalho from '../src/components/mainHeader.vue';
-import carrossel from '../src/components/slider.vue';
-import conteudo from '../src/components/container.vue';
+import barraNavegacao from '../src/components/barraNavegacao';
 
 export default {
-  name: 'app',
+  name: 'App',
 
   components:
   {
-    barraRegistro,
-    cabecalho,
-    carrossel,
-    conteudo
+    barraNavegacao
   }
 }
-
 </script>
 
 <style>
 
-#principal {
-  padding: 0;  
-  margin: 0;
-  box-sizing: border-box;  
-  font-size: 15px; 
-  background-color: #fbfcfc; 
+h2 {
+  text-align: center;
 }
 
 </style>
