@@ -6,7 +6,7 @@ import sobre from '@/components/sobre'
 
 Vue.use(Router)
 
-export default new Router ({
+export default new Router({
   routes: [
     {
       path: '/',
@@ -26,4 +26,4 @@ export default new Router ({
     	component: sobre
     }
   ]
-})
+});

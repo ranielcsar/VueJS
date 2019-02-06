@@ -1,6 +1,15 @@
 <template>
    <div>
-      <h2>CAIXINHA</h2>      
+      <h2>Sua caixinha!</h2>
+      
+      <ul>
+         <li v-for="evento in pedidos">
+           <p>Evento: <b>{{ evento.nome }}</b></p>
+           <p>Data: <b>{{ evento.dataEvento }}</b></p>
+           <p>Local: <b>{{ evento.local }}</b></p>
+           <p>Valor: <b>{{ evento.valor }}</b></p>
+         </li>
+      </ul>
    </div>
 </template>
 
@@ -22,7 +31,7 @@ export default {
       bus.$on('addPedido', data => {
          this.pedidos.push(data);
 
-         console.log('funfou');
+         console.log(this.pedidos);
       })      
    }
 }
