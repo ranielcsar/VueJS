@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <barraNavegacao></barraNavegacao>
-    <router-view/>
+    
+    <keep-alive>      
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 

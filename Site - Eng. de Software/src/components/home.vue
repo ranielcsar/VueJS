@@ -29,6 +29,8 @@ import { bus } from '../bus.js';
 export default {
   name: 'home',
 
+  beforeCreate() { console.log(this); },
+
   data: function()
    {
       return {

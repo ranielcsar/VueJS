@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
-import caixinha from '@/components/caixinha'
-import sobre from '@/components/sobre'
+import home from '../components/home'
+import caixinha from '../components/caixinha'
+import sobre from '../components/sobre'
 
 Vue.use(Router)
 
@@ -25,5 +25,8 @@ export default new Router({
     	name: 'sobre',
     	component: sobre
     }
-  ]
+  ],
+
+  linkActiveClass: 'active',
+  mode: 'history'
 });
