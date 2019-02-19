@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <barraNavegacao></barraNavegacao>
+    <meuSlider></meuSlider>
     
     <keep-alive>      
       <router-view/>
@@ -11,21 +12,28 @@
 <script>
 
 import barraNavegacao from '../src/components/barraNavegacao';
+import meuSlider from '../src/components/slider';
 
 export default {
   name: 'App',
 
   components:
   {
-    barraNavegacao
+    barraNavegacao,
+    meuSlider
   }
 }
 </script>
 
 <style>
 
-h2 {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdfdfd;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 </style>

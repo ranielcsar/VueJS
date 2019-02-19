@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h2 class="text-md-center titulo">EVENTOS</h2>
+  <div class="container" id="eventos">
+    <h2 class="titulo">EVENTOS</h2>
 
     <div class="row">
       <div class="col-md-6 col-lg-4" v-for="(evento, index) in eventos" :key="evento.id">
@@ -8,7 +8,7 @@
           <img class="card-img-top imagem" :src="evento.imagem" alt="Card image cap">
           <div class="card-body">
             
-            <div class="descricaoEvento text-left">
+            <div class="descricaoEvento">
               <p>Evento: <b>{{ evento.nome }}</b></p>
               <p>Data: <b>{{ evento.dataEvento }}</b></p>
               <p>Local: <b>{{ evento.local }}</b></p>
@@ -73,7 +73,10 @@ export default {
 <style scoped>
 
 .titulo {
-  margin-bottom: 1em;
+  margin: 2em 0;
+
+  text-decoration: underline;
+  text-underline-position: under;  
 }
 
 .conteudo {

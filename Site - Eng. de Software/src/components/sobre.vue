@@ -18,3 +18,11 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+h2 {
+   margin: 2.5% 0;
+}
+
+</style>
