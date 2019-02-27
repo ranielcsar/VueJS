@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <barraNavegacao></barraNavegacao>
-    <meuSlider></meuSlider>
-    
-    <keep-alive>      
-      <router-view/>
-    </keep-alive>
+    <!--<meuSlider></meuSlider>--> 
+
+    <keep-alive>        
+      <router-view></router-view>
+    </keep-alive>   
   </div>
 </template>
 
@@ -34,6 +34,15 @@ html {
 body {
   background-color: #fdfdfd;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.titulo {
+  margin: 2em 0;
+
+  text-decoration: underline;
+  text-underline-position: under;
+
+  color: #404040;  
 }
 
 </style>

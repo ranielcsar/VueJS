@@ -59,9 +59,9 @@ export default {
       }
    },
 
-  methods:
-  {
-    enviarPedido(i) {
+  methods: {
+    enviarPedido(i)
+    {
       bus.$emit('addPedido', this.eventos[i]);
       alert('Pedido enviado!');
     }
@@ -71,13 +71,6 @@ export default {
 
 
 <style scoped>
-
-.titulo {
-  margin: 2em 0;
-
-  text-decoration: underline;
-  text-underline-position: under;  
-}
 
 .conteudo {
   margin-top: 5%;

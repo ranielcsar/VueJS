@@ -3,9 +3,6 @@
 
       <div class="loginHeader">
         <span class="registro"><a href="#">ENTRAR</a> ou <a href="#">REGISTRAR</a> | {{ dataAtual() }}</span>
-        <ul class="links">           
-           <router-link class="" to="/caixinha" exact>Caixinha de ingressos</router-link>
-        </ul>
       </div>
 
       <div class="divTitulo">
@@ -14,12 +11,16 @@
         <div class="menu">
           <ul class="container">
             <li class="menuItem">
-              <router-link class="" to="/" exact><span>EVENTOS</span></router-link>
+              <router-link class="" :to="{ path: '/'}"><span>EVENTOS</span></router-link>
             </li>
 
             <li class="menuItem">
-              <router-link class="" to="/sobre" exact><span>SOBRE</span></router-link>
-            </li>          
+              <router-link class="" :to="{ path: 'caixinha'}"><span>CAIXINHA DE INGRESSOS</span></router-link>
+            </li>
+
+            <li class="menuItem">
+              <router-link class="" :to="{ path: 'sobre'}"><span>SOBRE</span></router-link>
+            </li>
           </ul>         
         </div>
       </div>
@@ -27,10 +28,10 @@
 </template>
 
 <script type="text/javascript">
+
+import Caixinha from './caixinha';
   
 export default {
-  beforeCreate() { console.log(this); },
-
   methods:
   {
     dataAtual: function()
@@ -45,7 +46,9 @@ export default {
 
       return dataFinal;
     }
-  }
+  },
+
+  components: { Caixinha }
 }
 
 </script>
@@ -71,15 +74,6 @@ li {
    color: white;
 }
 
-.links {
-   margin-right: 4%;
-   float: right;   
-}
-   .links li {
-      display: inline-block;
-      padding-left: 2em;      
-   }
-
 /* TITULO */
 .divTitulo {
   width: 100%;
@@ -89,8 +83,9 @@ li {
 
 .titulo {
   font-size: 9vh;
-  color: white;
-  text-align: center;  
+  color: #e0f3fb;
+  text-align: center;
+  margin: 0; 
 }
 
 
@@ -111,7 +106,7 @@ li {
 
 
 .container {
-  margin-left: 40%;
+  margin-left: 31%;
 }
 
 </style>

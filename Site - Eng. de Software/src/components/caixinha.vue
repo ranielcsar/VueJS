@@ -1,6 +1,6 @@
 <template>
-   <div>
-      <h2>Sua caixinha!</h2>      
+   <div class="container">
+      <h2 class="titulo">SUA CAIXINHA!</h2>      
 
       <div class="row container">
         <div class="col-md-6 col-lg-4" v-for="(pedido, index) in pedidos">
@@ -14,7 +14,10 @@
                 <p>Local: <b>{{ pedido.local }}</b></p>
                 <p>Valor: <b>{{ pedido.valor }}</b></p>
               </div>
-              
+
+              <button class="btnConfirma" @click="confirmarCompra(index)">Confirmar compra</button>
+              <button class="btnCancela" @click="cancelarCompra(index)">Cancelar</button>
+
             </div>
           </div>
         </div>   
@@ -39,10 +42,50 @@ export default {
    mounted() {
       bus.$on('addPedido', data => {
          this.pedidos.push(data);
-
-         console.log(this.pedidos);
       })      
+   },
+
+   methods: {
+      cancelarCompra(index)
+      {
+         this.pedidos.splice(index, 1);         
+      }
    }
 }
 
 </script>
+
+<style>
+
+.btnConfirma, .btnCancela {
+   background-color: #1c528d;
+   color: white;
+   border: none;
+   outline: none;
+   width: auto;
+   border-radius: 5px;
+   padding: 4%;
+
+   transition: 0.2s;
+   box-shadow: 1px 2px 1px #33333385;
+}
+
+.btnCancela {
+   border: 1px solid #333;
+   background-color: transparent;
+   padding: 2.5%;
+   margin-left: 10px;
+
+   color: #333;
+}
+   .btnCancela:hover {
+      background-color: #c33;
+      color: white;
+   }
+
+.card img {
+  width: 100%;
+  height: 130px;
+}
+
+</style>
