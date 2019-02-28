@@ -58,7 +58,9 @@ export default {
 
   width: 100%;
   min-height: 25em;
-  margin-top: 0.1em;  
+  margin-top: 0.1em;
+
+  z-index: 0;  
 }
 
 .carrosel-view {  

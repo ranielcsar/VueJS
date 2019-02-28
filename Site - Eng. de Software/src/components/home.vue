@@ -1,35 +1,41 @@
 <template>
-  <div class="container" id="eventos">
-    <h2 class="titulo">EVENTOS</h2>
+  <div>
 
-    <div class="row">
-      <div class="col-md-6 col-lg-4" v-for="(evento, index) in eventos" :key="evento.id">
-        <div class="card" style="width: 100%;">
-          <img class="card-img-top imagem" :src="evento.imagem" alt="Card image cap">
-          <div class="card-body">
-            
-            <div class="descricaoEvento">
-              <p>Evento: <b>{{ evento.nome }}</b></p>
-              <p>Data: <b>{{ evento.dataEvento }}</b></p>
-              <p>Local: <b>{{ evento.local }}</b></p>
-              <p>Valor: <b>{{ evento.valor }}</b></p>
+    <barraNavegacao></barraNavegacao>
+    <div class="container" id="eventos">    
+      <h2 class="titulo">EVENTOS</h2>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4" v-for="(evento, index) in eventos" :key="evento.id">
+          <div class="card" style="width: 100%;">
+            <img class="card-img-top imagem" :src="evento.imagem" alt="Card image cap">
+            <div class="card-body">
+              
+              <div class="descricaoEvento">
+                <p>Evento: <b>{{ evento.nome }}</b></p>
+                <p>Data: <b>{{ evento.dataEvento }}</b></p>
+                <p>Local: <b>{{ evento.local }}</b></p>
+                <p>Valor: <b>{{ evento.valor }}</b></p>
+              </div>
+              <button type="submit" class="botao" @click="enviarPedido(index)">Enviar pra caixinha</button>
             </div>
-            <button type="submit" class="botao" @click="enviarPedido(index)">Enviar pra caixinha</button>
           </div>
-        </div>
-      </div>   
+        </div>   
+      </div>
     </div>
+    
   </div>
 </template>
 
 <script>
 
 import { bus } from '../bus.js';
+import barraNavegacao from './barraNavegacao';
 
 export default {
   name: 'home',
 
-  beforeCreate() { console.log(this); },
+  components: { barraNavegacao },
 
   data: function()
    {

@@ -1,11 +1,6 @@
 <template>
    <nav class="cabecalho">
-
-      <div class="loginHeader">
-        <span class="registro"><a href="#">ENTRAR</a> ou <a href="#">REGISTRAR</a> | {{ dataAtual() }}</span>
-      </div>
-
-      <div class="divTitulo">
+      <div class="divTitulo">        
         <a href="#"><h1 class="titulo">INGRESSO</h1></a>
 
         <div class="menu">
@@ -30,23 +25,8 @@
 <script type="text/javascript">
 
 import Caixinha from './caixinha';
-  
-export default {
-  methods:
-  {
-    dataAtual: function()
-    {
 
-      let data = new Date();
-      let dia = data.getDate();
-      let mes = data.toLocaleString('pt-BR', { month: 'long' });
-
-      let dataFinal = mes.charAt(0).toUpperCase(0) + mes.slice(1) + ' ' + dia + ', ' +
-      data.getFullYear();
-
-      return dataFinal;
-    }
-  },
+export default {  
 
   components: { Caixinha }
 }
@@ -61,17 +41,6 @@ a {
 
 li {
   list-style: none;
-}
-
-/* HEADER DE LOGIN */
-.loginHeader {
-   background-color: #333333;
-   padding: 5px;
-}
-
-.registro {
-   margin-left: 10%;
-   color: white;
 }
 
 /* TITULO */

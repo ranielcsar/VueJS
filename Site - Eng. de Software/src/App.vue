@@ -1,26 +1,22 @@
 <template>
   <div id="app">
-    <barraNavegacao></barraNavegacao>
-    <!--<meuSlider></meuSlider>--> 
+    <barraLogin></barraLogin>
 
-    <keep-alive>        
+    <keep-alive>
       <router-view></router-view>
     </keep-alive>   
   </div>
 </template>
 
 <script>
-
-import barraNavegacao from '../src/components/barraNavegacao';
-import meuSlider from '../src/components/slider';
+import barraLogin from '../src/components/barraLogin';
 
 export default {
   name: 'App',
 
   components:
   {
-    barraNavegacao,
-    meuSlider
+    barraLogin
   }
 }
 </script>
@@ -29,6 +25,7 @@ export default {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
