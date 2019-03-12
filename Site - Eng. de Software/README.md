@@ -1,6 +1,6 @@
-# Site de 'Venda de Ingressos'
+# site
 
-> Projeto da disciplina Eng. de Software. 4º Semestre. IF Baiano - Campus Senhor do Bonfim. 2019.
+> A Vue.js project
 
 ## Build Setup
 

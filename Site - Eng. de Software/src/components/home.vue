@@ -15,8 +15,10 @@
                 <p>Evento: <b>{{ evento.nome }}</b></p>
                 <p>Data: <b>{{ evento.dataEvento }}</b></p>
                 <p>Local: <b>{{ evento.local }}</b></p>
+                <p>Cidade: <b>{{ evento.cidade }}</b></p>
                 <p>Valor: <b>{{ evento.valor }}</b></p>
               </div>
+              
               <button type="submit" class="botao" @click="enviarPedido(index)">Enviar pra caixinha</button>
             </div>
           </div>
@@ -37,34 +39,13 @@ export default {
 
   components: { barraNavegacao },
 
-  data: function()
-   {
-      return {
-        eventos: [
-          { imagem: 'https://bit.ly/2t9jFTf',
-            nome: 'GeoBonfim', 
-            dataEvento: '03/03/2019',
-            local: 'IF Baiano - Sr. do Bonfim',
-            valor: 'Entrada franca',
-            id: 1 },
-
-            { imagem: 'https://bit.ly/2StC4Z3',
-            nome: 'FECITEC', 
-            dataEvento: '10/03/2019',
-            local: 'Praça Nova do Congresso',
-            valor: 'Entrada franca',
-            id: 2 },
-
-            { imagem: 'https://bit.ly/2DWE4kK',
-            nome: 'O que tem no IF?', 
-            dataEvento: 'Qualquer dia! :D',
-            local: 'IF Baiano - Sr. do Bonfim',
-            valor: 'Entrada franca',
-            id: 3 }
-        ]
-      }
-   },
-
+  computed:
+  {
+     eventos() {
+         return this.$store.state.eventList
+     }
+  },
+  
   methods: {
     enviarPedido(i)
     {

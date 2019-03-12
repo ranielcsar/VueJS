@@ -1,13 +1,19 @@
 <template>
    <div class="loginHeader">
      <span class="registro"><a href="#">ENTRAR</a> ou <a href="#">REGISTRAR</a> | {{ dataAtual() }}</span>
-   </div>
+
+     <search></search>
+   </div>   
 </template>
 
 <script>
+
+import search from './search';
    
 export default {
    name: 'login',
+
+   components: { search },
    
    methods:
    {
@@ -31,7 +37,7 @@ export default {
 
 .loginHeader {
    background-color: #333333;
-   padding: 5px;
+   padding: 0.7em;
 }
 
 .registro {
