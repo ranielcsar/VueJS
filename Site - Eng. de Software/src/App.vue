@@ -4,19 +4,22 @@
 
     <keep-alive>
       <router-view></router-view>
-    </keep-alive>   
+    </keep-alive>
+    <rodape></rodape>   
   </div>
 </template>
 
 <script>
 import barraLogin from '../src/components/barraLogin';
+import rodape from '../src/components/rodape';
 
 export default {
   name: 'App',
 
   components:
   {
-    barraLogin
+    barraLogin,
+    rodape
   }
 }
 </script>

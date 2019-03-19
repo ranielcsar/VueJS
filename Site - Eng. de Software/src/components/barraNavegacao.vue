@@ -76,6 +76,7 @@ li {
 
 .container {
   margin-left: 31%;
+  margin-right: auto;
 }
 
 </style>

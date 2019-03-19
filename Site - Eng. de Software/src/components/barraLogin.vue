@@ -1,6 +1,6 @@
 <template>
    <div class="loginHeader">
-     <span class="registro"><a href="#">ENTRAR</a> ou <a href="#">REGISTRAR</a> | {{ dataAtual() }}</span>
+     <span class="registro"><router-link :to="{ path: '/telaLogin'}">ENTRAR</router-link> ou <router-link :to="{ path: '/telaCadastro'}">REGISTRAR</router-link> | {{ dataAtual() }}</span>
 
      <search></search>
    </div>   
@@ -19,7 +19,6 @@ export default {
    {
       dataAtual: function()
       {
-
          let data = new Date();
          let dia = data.getDate();
          let mes = data.toLocaleString('pt-BR', { month: 'long' });
@@ -37,7 +36,7 @@ export default {
 
 .loginHeader {
    background-color: #333333;
-   padding: 0.7em;
+   padding: 1.5%;
 }
 
 .registro {

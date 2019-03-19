@@ -1,6 +1,6 @@
 <template>
    <div class="voltar">
-     <router-link class="link" :to="{ path: '/'}">
+     <router-link class="link" :to="{ path: '/', name: 'home'}">
        <h6>VOLTAR PARA A PÁGINA INICIAL</h6>
      </router-link>
    </div>

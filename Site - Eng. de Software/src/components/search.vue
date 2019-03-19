@@ -1,7 +1,7 @@
 <template>
    <div class="procurar">
-      <input class="searchBar" type="text" v-model="cidade" placeholder="Procure eventos na sua cidade!">
-      <i @click="procurarCidade(cidade)" class="fa fa-search searchBtn"></i>
+      <input class="searchBar" type="text" v-model="procurarCidade" placeholder="Procure eventos na sua cidade!">
+      <i class="fa fa-search searchBtn"></i>
    </div>
 </template>
 
@@ -11,20 +11,24 @@ import { bus } from '../bus.js';
 export default {
    name: 'search',
 
-   data()
-   {
-      return { 
-         cidade: '',
-         evento: null
-      }
-   },
+   data() { return { city: '' } },
 
-   methods: {
-      procurarCidade(cidade)
-      {         
-         bus.$emit('buscarCidade', cidade);   
+   computed: {
+      procurarCidade: {
+         get() {},
+
+         set(city)
+         {
+            if (!city)
+            {
+               this.$store.commit('mudarCidade', '')
+            } else {
+               this.$store.commit('mudarCidade', city);
+            }
+         }   
       }
    }
+  
 }
 
 </script>
@@ -32,30 +36,25 @@ export default {
 <style>
 
 .procurar {
-   display: flex;
    margin-top: -0.4em;
-
    float: right;
-   width: 27%;
+   width: 30%;
 }
 
-.searchBar, .searchBtn {
+.searchBar {   
+   width: 90%;
+   padding: 0.5em;
+   font-size: 2.5vh;
+   font-weight: bold;
+
    outline: none;   
    border-radius: 5px;
    border: none;
    
    margin-right: 0.4em;
-} 
-
-.searchBar {   
-   width: 100%;
-   padding: 0.5em;
-   font-size: 2.5vh;
-   font-weight: bold;
 
    transition: 0.3s;
    border: 1px solid #bdbdbd;
-
    background-color: transparent;     
 }
    .searchBar:focus {
@@ -66,9 +65,6 @@ export default {
 
 .searchBtn {
    color: white;
-   background-color: gray;
-   padding: 10px;
-   width: 2em;
 }
 
 </style>

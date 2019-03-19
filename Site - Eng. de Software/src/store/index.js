@@ -18,8 +18,8 @@ export const store = new Vuex.Store({
          { imagem: 'https://bit.ly/2StC4Z3',
          nome: 'FECITEC', 
          dataEvento: '10/03/2019',
-         local: 'Praça Nova do Congresso',
-         cidade: 'Senhor do Bonfim',
+         local: 'Orla',
+         cidade: 'Juazeiro',
          valor: 'Entrada franca',
          id: 2 },
 
@@ -30,6 +30,15 @@ export const store = new Vuex.Store({
          cidade: 'Senhor do Bonfim',
          valor: 'Entrada franca',
          id: 3 }
-      ]
+      ],
+
+      cidade: ''
+   },
+
+   mutations: {
+      mudarCidade(state, cidade)
+      {
+         state.cidade = cidade;
+      }
    }
 })

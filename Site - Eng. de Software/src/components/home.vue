@@ -41,8 +41,11 @@ export default {
 
   computed:
   {
-     eventos() {
-         return this.$store.state.eventList
+     eventos() 
+     {
+        return this.$store.state.eventList.filter(evento => {
+          return evento.cidade.toLowerCase().includes(this.$store.state.cidade.toLowerCase())
+        })
      }
   },
   
